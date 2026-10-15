@@ -1,0 +1,71 @@
+# Decap CMS. Opens at /admin/. Edits the Markdown files in /content and commits to GitHub.
+# The GitHub login needs an OAuth proxy; set base_url to its address (see README, "Decap setup").
+backend:
+  name: github
+  repo: jrdesvernay-gtr/get-to-rev-site
+  branch: main
+  base_url: https://REPLACE-WITH-OAUTH-PROXY.workers.dev # TODO
+  auth_endpoint: auth
+
+# Uncomment to edit locally without a GitHub login: run `npx decap-server` next to `npm run dev`
+# local_backend: true
+
+publish_mode: simple
+media_folder: public/uploads
+public_folder: /uploads
+site_url: https://get-to-rev.com
+
+collections:
+  - name: blog
+    label: Blog posts
+    folder: content/blog
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Meta description (under 155 characters), name: description, widget: text }
+      - { label: Published, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Updated, name: updated, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Author, name: author, widget: string, default: Jean-Renaud Desvernay }
+      - { label: Category, name: category, widget: string }
+      - { label: Short answer (answer box under the title), name: shortAnswer, widget: text, required: false }
+      - label: FAQ
+        name: faq
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: q, widget: string }
+          - { label: Answer, name: a, widget: text }
+      - { label: Draft (hidden from the site), name: draft, widget: boolean, default: true }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: case-studies
+    label: Case studies
+    folder: content/case-studies
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title tag, name: title, widget: string }
+      - { label: H1, name: h1, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Client, name: client, widget: string }
+      - { label: Client logo path, name: clientLogo, widget: string, required: false }
+      - { label: Industry, name: industry, widget: string }
+      - { label: Published, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Updated, name: updated, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: One-line result, name: oneLineResult, widget: string }
+      - { label: Summary (quotable on its own), name: summary, widget: text }
+      - label: Results
+        name: stats
+        widget: list
+        required: false
+        fields:
+          - { label: Metric, name: label, widget: string }
+          - { label: Value, name: value, widget: string }
+      - { label: Stack, name: stack, widget: text, required: false }
+      - { label: Client quote, name: quote, widget: text, required: false }
+      - { label: Related service path, name: relatedService, widget: string, default: /services/ }
+      - { label: Body (challenge, approach, lessons), name: body, widget: markdown }

@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource/instrument-serif/400-italic.css";
+
+/* ---------- Design tokens: change the look of the whole site here ---------- */
+@theme {
+  --color-sand: #efe6d6;
+  --color-sand-deep: #e6dac5;
+  --color-ink: #15191b;
+  --color-ink-soft: #3b4144;
+  --color-muted: #6b6f70;
+  --color-red: #cb3522;
+  --color-red-dark: #a82a1a;
+  --color-mist: #edf5ec;
+  --color-line: rgba(21, 25, 27, 0.12);
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+
+  --radius-card: 1.5rem;
+  --shadow-soft: 0 1px 2px rgba(21,25,27,.04), 0 8px 24px -8px rgba(21,25,27,.10), 0 24px 48px -24px rgba(21,25,27,.12);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--color-sand);
+  background-image:
+    radial-gradient(rgba(21,25,27,.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* One italic serif word per headline */
+.accent { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+
+h1, h2, h3 { letter-spacing: -0.03em; font-weight: 500; }
+
+.container-x { max-width: 1300px; margin-inline: auto; padding-inline: 1.25rem; }
+@media (min-width: 768px) { .container-x { padding-inline: 2.5rem; } }
+
+/* Long-form text from markdown */
+.prose-gtr { font-size: 1.0625rem; line-height: 1.75; color: var(--color-ink-soft); }
+.prose-gtr h2 { font-size: 1.75rem; margin: 2.5rem 0 .75rem; color: var(--color-ink); }
+.prose-gtr h3 { font-size: 1.25rem; margin: 2rem 0 .5rem; color: var(--color-ink); }
+.prose-gtr p { margin: 0 0 1.1rem; }
+.prose-gtr ul, .prose-gtr ol { margin: 0 0 1.1rem 1.25rem; }
+.prose-gtr ul { list-style: disc; } .prose-gtr ol { list-style: decimal; }
+.prose-gtr li { margin: .35rem 0; }
+.prose-gtr a { color: var(--color-red); text-decoration: underline; text-underline-offset: 3px; }
+.prose-gtr table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .95rem; }
+.prose-gtr th, .prose-gtr td { text-align: left; padding: .7rem .75rem; border-bottom: 1px solid var(--color-line); vertical-align: top; }
+.prose-gtr blockquote { border-left: 3px solid var(--color-red); padding-left: 1rem; font-style: italic; margin: 1.5rem 0; }
+.prose-gtr strong { color: var(--color-ink); font-weight: 600; }
