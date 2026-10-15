@@ -25,7 +25,7 @@ Marketing site for Get-To-Rev (get-to-rev.com): a fractional GTM engineer for hi
 - FAQ, comparison table and plans are real HTML, not images, with FAQPage schema generated from the same FAQ data.
 - Title under 60 characters, meta description under 155, canonical on every page (`lib/seo.ts`).
 - Every page needs the right JSON-LD: Organization and WebSite (layout), FAQPage, Person, Service, Article or BlogPosting, BreadcrumbList.
-- Facts: pricing is Outbound $2,500, GTM Engineering $4,500, GTM + Growth Engineering $7,500 a month, 6-month term, free audit first, floor $2,500. Client owns everything under an MIT license. Sending infrastructure passed through at cost. Flat fee for paid media, never a percentage of spend.
+- Facts: pricing is Outbound $2,500, GTM Engineering $5,500, GTM + Growth Engineering $8,500 a month, 6-month term, free audit first, floor $2,500. Client owns everything under an MIT license. Sending infrastructure passed through at cost. Flat fee for paid media, never a percentage of spend.
 - Named clients: Manifold (flagship healthtech case), Scribeberry, Relay, TribLIVE. Show only cleared logos.
 
 ## Commands

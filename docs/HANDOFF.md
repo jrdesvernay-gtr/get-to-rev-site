@@ -14,7 +14,7 @@ The first hand-built layouts were removed to start clean from Relume. Kept: this
 - Client logos in `public/logos` (Manifold ink/white, Relay, TribLIVE). GTR logo PNG.
 
 ## Decisions already made (do not reopen)
-- Positioning "Type G": fractional GTM engineer for hire. Plans: Outbound $2,500, GTM Engineering $4,500, GTM + Growth Engineering $7,500; 6-month term; free audit entry; $2,500 floor.
+- Positioning "Type G": fractional GTM engineer for hire. Plans: Outbound $2,500, GTM Engineering $5,500, GTM + Growth Engineering $8,500; 6-month term; free audit entry; $2,500 floor.
 - Design: warm sand + near-black ink + ONE red accent, Inter + one italic serif word per headline, pill buttons, floating nav. Not a black site. Real photos of JR only.
 - Manifold is named in the flagship case study and the logo strip. Scribeberry, Relay, TribLIVE can be named.
 - Home copy is about 1,500 words; keep it that length.

@@ -18,7 +18,7 @@ Blog
  | 
 Pricing and offer
  | Placeholder
- | Three monthly plans: Outbound $2,500, GTM Engineering $4,500, GTM + Growth Engineering $7,500. Floor is $2,500 a month. Term is 6 months and the entry offer is a free audit. Plan details are drafted from the GTM Agency and Growth Today offers (see Offer benchmark) and open to your edits.
+ | Three monthly plans: Outbound $2,500, GTM Engineering $5,500, GTM + Growth Engineering $8,500. Floor is $2,500 a month. Term is 6 months and the entry offer is a free audit. Plan details are drafted from the GTM Agency and Growth Today offers (see Offer benchmark) and open to your edits.
  | 
 Client naming
  | Locked
@@ -730,7 +730,7 @@ Ownership
 Price
  | Not published ("fixed sprint")
  | Not published
- | $2,500, $4,500 and $7,500 a month, published
+ | $2,500, $5,500 and $8,500 a month, published
  | 
 Proof shown
  | Partner case studies (AirOps $7.8M qualified pipeline, Teikametrics $360K annualized contract, Aircall 3,655 new accounts), presented as companies using the same systems
@@ -951,12 +951,12 @@ Outbound
  | 
 GTM Engineering
  | The full GTM motion, stopping at outbound and RevOps: everything in Outbound plus signal-based plays, account tiering, CRM enrichment and routing, and attribution. No paid ads.
- | $4,500 a month
+ | $5,500 a month
  | 6 months
  | 
 GTM + Growth Engineering
  | Everything in GTM Engineering plus growth engineering: paid media on Meta, Google and LinkedIn with audience sync, creative testing and optimization, plus a LinkedIn content engine. Ad spend is paid to the platforms.
- | $7,500 a month
+ | $8,500 a month
  | 6 months
  | 
 See full pricing. The old Discover, Launch and Growth plans are retired.
@@ -1007,7 +1007,7 @@ AI marketing automation
  | 
 Growth engineering
  | Teams running Meta, Google or LinkedIn with a thin creative and ops bench
- | GTM + Growth Engineering plan, $7,500 a month
+ | GTM + Growth Engineering plan, $8,500 a month
  | Retargeting inside the healthtech case
  | 
 AI marketing automation (on the hub). AI marketing automation is the use of AI agents to run RevOps, content and search-visibility workflows end to end, so a small team operates at the scale of a larger one. It includes AI engine optimization (AEO or GEO): making your brand easy for AI answer engines to find, understand and cite.
@@ -1067,7 +1067,7 @@ Revenue attribution. Reporting that ties spend to pipeline.
 
 LinkedIn content engine. Content pillars built from your ICP, ghostwriting in your voice with your approval, a publishing calendar, engagement and repurposing, and analytics tied to inbound leads.
 
-Pricing: included in the GTM + Growth Engineering plan at $7,500 a month, a flat fee and never a percentage of spend.
+Pricing: included in the GTM + Growth Engineering plan at $8,500 a month, a flat fee and never a percentage of spend.
 FAQ. Do you take a percentage of ad spend? No. The fee is flat so our incentive is results, not budget size.
 Build note (not for publishing): there is no standalone growth-engineering case study yet. Scope one pilot, or lead with the retargeting results inside the healthtech case.
 
@@ -1237,12 +1237,12 @@ Outbound
  | 
 GTM Engineering
  | The full motion, stopping at outbound and RevOps. Everything in Outbound, plus: signal-based plays (hiring, funding, job changes); TAM sourcing and account tiering; the multi-agent outbound system (sourcer, enricher, context engine, copywriter agent, campaign agent); CRM enrichment, scoring, routing and lifecycle automation; inbound lead processing; an attribution dashboard and a quarterly review. Not included: paid ads and demand generation.
- | $4,500 a month
+ | $5,500 a month
  | 6 months
  | 
 GTM + Growth Engineering
  | The GTM Engineering plan plus paid acquisition. Adds: audience sync from your CRM into Google, LinkedIn and Meta; ABM and retargeting campaigns; AI-assisted creative generation and testing, reviewed by a human before launch; campaign builds, budget optimization and paid attribution; a LinkedIn content engine with content pillars, ghostwriting in your voice with your approval, a publishing calendar, engagement and analytics tied to inbound leads. Media spend is paid directly to the platforms and is not a percentage of our fee.
- | $7,500 a month
+ | $8,500 a month
  | 6 months
  | 
 Value line: A fractional GTM engineer, backed by a small team, for the price of one hire: multi-agent outbound, growth engineering and AI marketing automation.
