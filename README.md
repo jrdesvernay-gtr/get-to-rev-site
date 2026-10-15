@@ -13,8 +13,8 @@ npm run build      # static site in ./out
 | What | Where |
 |---|---|
 | Colors, fonts, radius | `app/globals.css` (`@theme`) |
-| Page sections | `components/sections/*.tsx` |
-| Stats, plans, FAQ, comparison, segments | `lib/data.ts` |
+| Page sections | `components/sections/*.tsx` (rebuilt from the Relume export) |
+| Page copy | `docs/copy-deck.md` |
 | GTM id, Calendly, LinkedIn | `lib/site.ts` |
 | Blog posts, case studies | `content/` (or `/admin/` once Decap is set up) |
 | Redirects from the old site | `scripts/redirects.json`, then `python3 scripts/make_htaccess.py` |

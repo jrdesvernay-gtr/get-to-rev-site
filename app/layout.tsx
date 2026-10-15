@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
 import { GtmHead, GtmBody } from "@/components/Analytics";
-import { JsonLd } from "@/components/ui";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,35 +12,34 @@ export const metadata: Metadata = {
   robots: process.env.NEXT_PUBLIC_STAGING === "1" ? { index: false, follow: false } : undefined,
 };
 
+// Site-wide Organization + WebSite schema. Page-level schema (FAQPage, Service, Article...) is added per page.
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#org`,
+      name: SITE.name,
+      url: SITE.url,
+      logo: `${SITE.url}/logos/gtr-logo.png`,
+      sameAs: [SITE.linkedin],
+      address: { "@type": "PostalAddress", addressLocality: "Seattle", addressRegion: "WA", addressCountry: "US" },
+      description: SITE.description,
+    },
+    { "@type": "WebSite", "@id": `${SITE.url}/#site`, url: SITE.url, name: SITE.name, publisher: { "@id": `${SITE.url}/#org` } },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <GtmHead />
-        <JsonLd
-          data={{
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "@id": `${SITE.url}/#org`,
-                name: SITE.name,
-                url: SITE.url,
-                logo: `${SITE.url}/logos/gtr-logo.png`,
-                sameAs: [SITE.linkedin],
-                address: { "@type": "PostalAddress", addressLocality: "Seattle", addressRegion: "WA", addressCountry: "US" },
-                description: SITE.description,
-              },
-              { "@type": "WebSite", "@id": `${SITE.url}/#site`, url: SITE.url, name: SITE.name, publisher: { "@id": `${SITE.url}/#org` } },
-            ],
-          }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </head>
       <body>
         <GtmBody />
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

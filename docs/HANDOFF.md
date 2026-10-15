@@ -2,7 +2,10 @@
 
 Built in a Claude chat session, now continuing in Claude Code. Read `CLAUDE.md` first (stack, design rules, copy rules), then this file.
 
-## Done
+## Status (updated 2026-10-15)
+The first hand-built layouts were removed to start clean from Relume. Kept: this file, `CLAUDE.md`, `docs/copy-deck.md`, redirects and scripts, logos, SEO routes, content files, Decap config, deploy workflow, design tokens. `app/page.tsx` is a placeholder. The old build is in Git history (commit 9e9b16e) if any layout detail is needed.
+
+## Done in the first build (history)
 - Next.js 15 static export, Tailwind v4 tokens, all pages: Home (12 sections), Services (hub + 2), Case studies (5), How we work, Pricing, About, Book a call (Calendly), Thank you, Privacy, Blog, six `/for/[industry]` segment pages.
 - SEO/AEO: metadata and canonicals, JSON-LD (Organization, WebSite, FAQPage, Person, Service, Article, BlogPosting, BreadcrumbList), sitemap.xml, robots.txt (AI crawlers allowed, staging disallow), llms.txt, RSS.
 - Decap CMS config at `/admin/` (needs the OAuth proxy, see README).

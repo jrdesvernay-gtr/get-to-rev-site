@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
-import { SEGMENTS } from "@/lib/data";
 import { getEntries } from "@/lib/content";
 
 export const dynamic = "force-static";
@@ -9,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = ["/", "/services/", "/services/ai-outbound-engineering/", "/services/growth-engineering/", "/case-studies/", "/how-we-work/", "/pricing/", "/about/", "/blog/", "/book-a-call/", "/privacy/"];
   const urls = [
     ...pages,
-    ...SEGMENTS.map((s) => `/for/${s.slug}/`),
     ...getEntries("case-studies").map((e) => `/case-studies/${e.slug}/`),
     ...getEntries("blog").filter((e) => !e.data.draft).map((e) => `/blog/${e.slug}/`),
   ];

@@ -6,8 +6,9 @@ Marketing site for Get-To-Rev (get-to-rev.com): a fractional GTM engineer for hi
 - Next.js 15 (App Router), TypeScript, **static export** (`output: 'export'`, `trailingSlash: true`). No server code, no API routes.
 - Tailwind CSS v4. Design tokens live in `app/globals.css` under `@theme` (colors, fonts, radius, shadow). Change the look there.
 - Content: Markdown with front matter in `content/blog` and `content/case-studies`, loaded by `lib/content.ts`. Edited in the browser through Decap CMS at `/admin/` (`public/admin/config.yml`).
-- Shared copy blocks (stats, plans, FAQ, comparison, segments) in `lib/data.ts`. Site constants (GTM id, Calendly URL, LinkedIn) in `lib/site.ts`.
-- One component per page section in `components/sections/`. Pages in `app/` only assemble sections.
+- Site constants (GTM id, Calendly URL, LinkedIn, nav) in `lib/site.ts`. SEO helpers in `lib/seo.ts`. Copy lives in `docs/copy-deck.md` until it is written into the pages.
+- The old hand-built layouts were removed on 2026-10-15. The pages are rebuilt from the Relume React export: one component per page section in `components/sections/`, pages in `app/` only assemble sections.
+- Kept from the first build: SEO routes (`app/sitemap.ts`, `robots.ts`, `llms.txt`, `feed.xml`), `app/layout.tsx` (site-wide schema, GTM), design tokens in `app/globals.css`, `content/` Markdown, `public/admin` (Decap), `scripts/` (redirects), `public/logos`, the deploy workflow. Add per-page JSON-LD (FAQPage, Service, Person, Article) when rebuilding the pages.
 - Hosting: Hostinger Cloud Professional, deployed by `.github/workflows/deploy.yml` (build, then FTP `out/`). Staging: get-to-revenue.com. Production: get-to-rev.com after cutover.
 
 ## Design rules (do not drift)
@@ -21,7 +22,7 @@ Marketing site for Get-To-Rev (get-to-rev.com): a fractional GTM engineer for hi
 - Plain words, short sentences, no hype. One H1 per page. The first sentence under each heading answers it.
 - One call to action: "Book a call" (`/book-a-call/`). No competing button styles.
 - Home copy is about 1,500 words. Keep the length. Do not add sections without removing words.
-- FAQ, comparison table and plans are real HTML, not images. FAQPage schema comes from `components/Faq.tsx`.
+- FAQ, comparison table and plans are real HTML, not images, with FAQPage schema generated from the same FAQ data.
 - Title under 60 characters, meta description under 155, canonical on every page (`lib/seo.ts`).
 - Every page needs the right JSON-LD: Organization and WebSite (layout), FAQPage, Person, Service, Article or BlogPosting, BreadcrumbList.
 - Facts: pricing is Outbound $2,500, GTM Engineering $4,500, GTM + Growth Engineering $7,500 a month, 6-month term, free audit first, floor $2,500. Client owns everything under an MIT license. Sending infrastructure passed through at cost. Flat fee for paid media, never a percentage of spend.
