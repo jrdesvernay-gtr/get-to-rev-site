@@ -49,7 +49,7 @@ F. Launch: 13) back up WordPress (files and database), keep 30 days, 14) remove 
 Staging and production are two sites on the same Hostinger plan, built from the same repo. The staging domain is not renamed.
 
 ## Open items
-- Real photo of JR (`components/sections/Operator.tsx`, `app/about/page.tsx`), logo as SVG (`public/logos/gtr-logo.png` is a PNG).
+- Real photo of JR: a 259x260 circular profile crop is saved at `public/images/jr-headshot.png` (placeholder until a larger, square, uncropped photo; use it in `components/sections/Operator.tsx` and the About page). Logo as SVG (`public/logos/gtr-logo.png` is a PNG).
 - GTM container (`lib/site.ts`; Calendly set to calendly.com/get-to-rev/introduction); audit the old container GTM-WDS7RSN first.
 - Blog post bodies: the 5 posts in `content/blog` are drafts with TODO bodies. Import from the old site, then set `draft: false`.
 - Privacy policy text (`app/privacy/page.tsx`).
