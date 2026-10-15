@@ -13,6 +13,18 @@ export function meta(title: string, description: string, path: string, opts: { n
   };
 }
 
+export function faqSchema(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((it) => ({
+      "@type": "Question",
+      name: it.q,
+      acceptedAnswer: { "@type": "Answer", text: it.a },
+    })),
+  };
+}
+
 export function breadcrumbs(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",
