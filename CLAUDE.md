@@ -33,6 +33,8 @@ Marketing site for Get-To-Rev (get-to-rev.com): a fractional GTM engineer for hi
 - `python3 scripts/check_redirects.py https://get-to-rev.com` after cutover (needs `requests`).
 - Decap needs an OAuth proxy for the GitHub login (see README). Use `local_backend: true` plus `npx decap-server` to edit locally.
 
+See `docs/HANDOFF.md` for current status and next steps; full copy in `docs/copy-deck.md`.
+
 ## Open items
 - Real photo of JR (`components/sections/Operator.tsx`, `app/about/page.tsx`), logo as SVG (`public/logos/gtr-logo.png` is a PNG).
 - Calendly event URL and GTM container (`lib/site.ts`); audit the old container GTM-WDS7RSN first.
