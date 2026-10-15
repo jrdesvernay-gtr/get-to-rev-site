@@ -42,7 +42,7 @@ Local project folder (JR's laptop): `/Users/jrdesvernay/Projects/get-to-rev-site
 A. Relume (JR): 1) site prompt into Site Builder, 2) check the sitemap against the page list, 3) wireframes, then the style guide prompt plus logo files, 4) export React (Tailwind), download the zip.
 B. Build (JR + Claude Code): 5) unzip into `relume/` in this folder, 6) build the site from the Relume layouts, re-skinned with the tokens in `app/globals.css`, with the real copy from `docs/copy-deck.md` (replace all Relume placeholder text), 7) add what Relume does not generate: sitemap, robots, llms.txt, RSS, JSON-LD schema, canonicals, titles and meta descriptions, blog and case studies as Markdown in `content/`, redirect map and checker, 8) commit and push.
 C. Staging (JR): 9) in hPanel import this repo as a Next.js web app on get-to-revenue.com with auto-deploy (fallback: `.github/workflows/deploy.yml` over FTP); staging is noindex (`NEXT_PUBLIC_STAGING=1`), 10) check on phone and desktop, fix.
-D. Inputs from JR, any time before launch: 11) SVG logo, headshot, Calendly URL, GTM container, privacy text, the 5 blog posts, client logo permissions.
+D. Inputs from JR, any time before launch: 11) SVG logo, headshot, GTM container, privacy text, the 5 blog posts, client logo permissions.
 E. Decap login (after staging works): 12) GitHub OAuth app plus a small Cloudflare Worker, address into `public/admin/config.yml`. `/admin/` lives in this repo.
 F. Launch: 13) back up WordPress (files and database), keep 30 days, 14) remove the WordPress site from get-to-rev.com in hPanel, 15) add a new website for get-to-rev.com with the same import (same repo and branch, no noindex), 16) run `python3 scripts/check_redirects.py https://get-to-rev.com`, submit `/sitemap.xml` in Google Search Console, 17) keep get-to-revenue.com as noindex staging.
 
@@ -50,7 +50,7 @@ Staging and production are two sites on the same Hostinger plan, built from the 
 
 ## Open items
 - Real photo of JR (`components/sections/Operator.tsx`, `app/about/page.tsx`), logo as SVG (`public/logos/gtr-logo.png` is a PNG).
-- Calendly event URL and GTM container (`lib/site.ts`); audit the old container GTM-WDS7RSN first.
+- GTM container (`lib/site.ts`; Calendly set to calendly.com/get-to-rev/introduction); audit the old container GTM-WDS7RSN first.
 - Blog post bodies: the 5 posts in `content/blog` are drafts with TODO bodies. Import from the old site, then set `draft: false`.
 - Privacy policy text (`app/privacy/page.tsx`).
 - Scribeberry wordmark (text placeholder in `components/sections/LogoStrip.tsx`); client permission for each logo.

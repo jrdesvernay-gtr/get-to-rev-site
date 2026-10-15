@@ -6,7 +6,7 @@ export const SITE = {
     "Hire a fractional GTM engineer to build AI marketing automation you own: multi-agent outbound, growth engineering and CRM attribution for B2B SaaS.",
   email: "jrdesvernay@get-to-rev.com",
   linkedin: "https://www.linkedin.com/in/jrdesvernay/",
-  calendly: "https://calendly.com/get-to-rev", // TODO: confirm the Calendly event URL
+  calendly: "https://calendly.com/get-to-rev/introduction",
   gtmId: "GTM-WDS7RSN", // TODO: audit the old container before reuse, or replace
   city: "Seattle, WA",
 };
