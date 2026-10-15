@@ -12,8 +12,9 @@ Marketing site for Get-To-Rev (get-to-rev.com): a fractional GTM engineer for hi
 - Hosting: Hostinger Cloud Professional, deployed by `.github/workflows/deploy.yml` (build, then FTP `out/`). Staging: get-to-revenue.com. Production: get-to-rev.com after cutover.
 
 ## Design rules (do not drift)
-- Warm sand background `#EFE6D6` with a faint dot grid, near-black ink `#15191B`, ONE accent red `#CB3522` (buttons only; the brighter logo red is for the logo only). Off-white `#EDF5EC` on dark bands. Not a fully black site.
+- Warm sand background `#EFE6D6` with a quiet n8n-canvas gridline texture (thin lines, dots at the intersections, in `app/globals.css`), near-black ink `#15191B`, ONE accent red `#CB3522` (buttons only; the brighter logo red is for the logo only). Off-white `#EDF5EC` on dark bands. Not a fully black site.
 - Inter for text, an italic serif (Instrument Serif) for exactly ONE accent word per headline (`<span className="accent">`).
+- Signature illustration: workflow nodes (rounded cards with port dots, status pills like Live/Building) joined by thin curved connectors on the grid, as clean SVG/HTML, in the hero, Services and How we work. Classes `node-card`, `node-port`, `connector`, `status-pill` exist in `app/globals.css`; one red connector or active node at a time.
 - Pill buttons, floating rounded nav, soft layered shadows, no hard borders, no gradients, no emoji, no stock photos. Real photos of people only.
 - Max content width about 1,300px. Mobile first; tables scroll on a phone.
 - References: appliedaisystems.io (look and feel), genesysgrowth.com (proof and results), fullbelly.ai (short, clear copy).

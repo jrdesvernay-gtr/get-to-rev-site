@@ -24,9 +24,13 @@
 html { scroll-behavior: smooth; }
 body {
   background-color: var(--color-sand);
+  /* n8n-canvas look: fine square gridlines with dots at the intersections */
   background-image:
-    radial-gradient(rgba(21,25,27,.07) 1px, transparent 1px);
-  background-size: 22px 22px;
+    radial-gradient(rgba(21,25,27,.16) 1.2px, transparent 1.6px),
+    linear-gradient(to right, rgba(21,25,27,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(21,25,27,.05) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 32px 32px;
+  background-position: -1px -1px, 0 0, 0 0;
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -53,3 +57,13 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 500; }
 .prose-gtr th, .prose-gtr td { text-align: left; padding: .7rem .75rem; border-bottom: 1px solid var(--color-line); vertical-align: top; }
 .prose-gtr blockquote { border-left: 3px solid var(--color-red); padding-left: 1rem; font-style: italic; margin: 1.5rem 0; }
 .prose-gtr strong { color: var(--color-ink); font-weight: 600; }
+
+/* ---------- Workflow illustration: nodes joined by connectors, on the grid ---------- */
+.grid-fade { -webkit-mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%); mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%); }
+.node-card { background: #fff; border-radius: 1rem; box-shadow: var(--shadow-soft); padding: .85rem 1rem; display: flex; align-items: center; gap: .65rem; font-size: .9rem; color: var(--color-ink); position: relative; }
+.node-port { width: 9px; height: 9px; border-radius: 9999px; background: var(--color-sand); box-shadow: 0 0 0 1.5px var(--color-ink); position: absolute; top: 50%; transform: translateY(-50%); }
+.node-port.in { left: -5px; } .node-port.out { right: -5px; }
+.node-active { box-shadow: 0 0 0 1.5px var(--color-red), var(--shadow-soft); }
+.connector { stroke: var(--color-ink); stroke-opacity: .55; stroke-width: 1.5; fill: none; }
+.connector-active { stroke: var(--color-red); stroke-opacity: 1; }
+.status-pill { font-size: .7rem; padding: .15rem .55rem; border-radius: 9999px; background: var(--color-mist); color: var(--color-ink-soft); }
