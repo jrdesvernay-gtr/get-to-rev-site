@@ -45,7 +45,7 @@ B. Build (JR + Claude Code): 5) unzip into `relume/` in this folder, 6) build th
 C. Staging (JR): 9) in hPanel import this repo as a Next.js web app on get-to-revenue.com with auto-deploy (fallback: `.github/workflows/deploy.yml` over FTP); staging is noindex (`NEXT_PUBLIC_STAGING=1`), 10) check on phone and desktop, fix.
 D. Inputs from JR, any time before launch: 11) headshot, GTM container, privacy text, the 5 blog posts, client logo permissions.
 E. Decap login (after staging works): 12) GitHub OAuth app plus a small Cloudflare Worker, address into `public/admin/config.yml`. `/admin/` lives in this repo.
-F. Launch: 13) back up WordPress (files and database), keep 30 days, 14) remove the WordPress site from get-to-rev.com in hPanel, 15) add a new website for get-to-rev.com with the same import (same repo and branch, no noindex), 16) run `python3 scripts/check_redirects.py https://get-to-rev.com`, submit `/sitemap.xml` in Google Search Console, 17) keep get-to-revenue.com as noindex staging.
+F. Launch (first: delete `.env.production` so the production build drops noindex and loads GTM): 13) back up WordPress (files and database), keep 30 days, 14) remove the WordPress site from get-to-rev.com in hPanel, 15) add a new website for get-to-rev.com with the same import (same repo and branch, no noindex), 16) run `python3 scripts/check_redirects.py https://get-to-rev.com`, submit `/sitemap.xml` in Google Search Console, 17) keep get-to-revenue.com as noindex staging.
 
 Staging and production are two sites on the same Hostinger plan, built from the same repo. The staging domain is not renamed.
 

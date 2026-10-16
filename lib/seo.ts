@@ -7,7 +7,7 @@ export function meta(title: string, description: string, path: string, opts: { n
     title,
     description,
     alternates: { canonical: url },
-    robots: opts.noindex ? { index: false, follow: false } : undefined,
+    robots: opts.noindex || process.env.NEXT_PUBLIC_STAGING === "1" ? { index: false, follow: false } : undefined,
     openGraph: { title, description, url, siteName: SITE.name, type: opts.type ?? "website", locale: "en_US" },
     twitter: { card: "summary_large_image", title, description },
   };
