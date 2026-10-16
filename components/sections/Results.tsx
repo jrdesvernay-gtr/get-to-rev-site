@@ -11,9 +11,9 @@ const STATS = [
 ];
 
 const LOGOS = [
-  { name: "Manifold", src: "/logos/manifold-logo-ink.svg" },
-  { name: "Relay", src: "/logos/relay-logo.svg" },
-  { name: "TribLIVE", src: "/logos/triblive-logo.png" },
+  { name: "Manifold", src: "/logos/manifold-logo-ink.svg", w: 104, h: 24 },
+  { name: "Relay", src: "/logos/relay-logo.svg", w: 63, h: 24 },
+  { name: "TribLIVE", src: "/logos/triblive-logo.png", w: 103, h: 24 },
 ];
 
 export function Results() {
@@ -36,7 +36,7 @@ export function Results() {
         <div className="mt-12 flex flex-wrap items-center gap-8">
           {LOGOS.map((logo) => (
             // eslint-disable-next-line @next/next/no-img-element
-            <img key={logo.name} src={logo.src} alt={logo.name} className="h-6 w-auto opacity-70" />
+            <img key={logo.name} src={logo.src} alt={logo.name} width={logo.w} height={logo.h} loading="lazy" decoding="async" className="h-6 w-auto opacity-70" />
           ))}
         </div>
       </div>
