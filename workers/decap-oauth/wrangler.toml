@@ -1,0 +1,7 @@
+name = "gtr-decap-oauth"
+main = "index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Site that hosts /admin/. Use https://get-to-revenue.com while testing on staging.
+ALLOWED_ORIGIN = "https://get-to-rev.com"

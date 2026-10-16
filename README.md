@@ -40,10 +40,10 @@ Add these in GitHub, Settings, Secrets and variables, Actions:
 5. Keep the WordPress backup for 30 days.
 
 ## Decap setup (browser editing at /admin/)
-Decap's GitHub login needs a small OAuth proxy. Hostinger static hosting cannot run one, so use a free serverless function (a Cloudflare Worker works).
-1. GitHub, Settings, Developer settings, OAuth Apps: create an app with the callback URL `https://<your-proxy>/callback`.
-2. Deploy the proxy with the app's client id and secret.
-3. Put the proxy address in `public/admin/config.yml` (`base_url`).
+Decap's GitHub login needs a small OAuth proxy. The code is in `workers/decap-oauth/` (Cloudflare Worker, free tier).
+1. GitHub, Settings, Developer settings, OAuth Apps, New: homepage `https://get-to-rev.com`, callback `https://gtr-decap-oauth.<your-subdomain>.workers.dev/callback`. Copy the client id, generate a client secret.
+2. Deploy: `cd workers/decap-oauth && npx wrangler login && npx wrangler deploy`, then `npx wrangler secret put GITHUB_CLIENT_ID` and `npx wrangler secret put GITHUB_CLIENT_SECRET`.
+3. Put the worker address in `public/admin/config.yml` (`base_url`). While testing on staging, set `ALLOWED_ORIGIN` in `wrangler.toml` to `https://get-to-revenue.com` and redeploy; set it back to `https://get-to-rev.com` at launch.
 4. Open `/admin/`, log in with GitHub. Each save is a commit and triggers a deploy.
 
 Until then, edit the Markdown in `content/` directly, or run `npx decap-server` with `local_backend: true`.
