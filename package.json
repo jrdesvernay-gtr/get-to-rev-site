@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/sdk-react": "^5.4.1",
     "@fontsource-variable/inter": "^5.1.0",
     "@fontsource/instrument-serif": "^5.1.0",
     "gray-matter": "^4.0.3",

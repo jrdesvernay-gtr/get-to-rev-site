@@ -63,6 +63,33 @@ export default {
 </script>`);
     }
 
+    // Builder.io publish webhook: commit a marker file so the normal push-triggered deploy rebuilds the static site.
+    // Builder webhook URL: https://<worker>/builder-publish?secret=<WEBHOOK_SECRET>
+    // Secrets: WEBHOOK_SECRET, GITHUB_TOKEN (fine-grained PAT, Contents: read/write on the site repo). Var: GITHUB_REPO.
+    if (url.pathname === "/builder-publish" && request.method === "POST") {
+      if (!env.WEBHOOK_SECRET || url.searchParams.get("secret") !== env.WEBHOOK_SECRET) {
+        return new Response("Forbidden", { status: 403 });
+      }
+      const api = `https://api.github.com/repos/${env.GITHUB_REPO}/contents/.builder-publish`;
+      const headers = {
+        authorization: `Bearer ${env.GITHUB_TOKEN}`,
+        accept: "application/vnd.github+json",
+        "user-agent": "gtr-builder-publish",
+      };
+      const existing = await fetch(api, { headers });
+      const sha = existing.ok ? (await existing.json()).sha : undefined;
+      const put = await fetch(api, {
+        method: "PUT",
+        headers: { ...headers, "content-type": "application/json" },
+        body: JSON.stringify({
+          message: "Builder publish: rebuild site",
+          content: btoa(new Date().toISOString() + "\n"),
+          sha,
+        }),
+      });
+      return new Response(put.ok ? "ok" : "github error " + put.status, { status: put.ok ? 200 : 502 });
+    }
+
     return new Response("Decap OAuth proxy", { status: 200 });
   },
 };
