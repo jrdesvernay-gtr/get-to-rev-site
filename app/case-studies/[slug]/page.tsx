@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { PageHeader } from "@/components/sections/PageHeader";
+import { CaseStudyHero } from "@/components/sections/CaseStudyHero";
+import { CaseStudyStats } from "@/components/sections/CaseStudyStats";
+import { CaseStudyChannels } from "@/components/sections/CaseStudyChannels";
 import { Cta } from "@/components/sections/Cta";
 import { getEntries, getEntry } from "@/lib/content";
 import { meta, breadcrumbs } from "@/lib/seo";
@@ -47,25 +49,17 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }} />
       <Nav />
       <main>
-        <PageHeader eyebrow={data.industry} h1={data.h1} intro={data.summary} />
-        <section className="px-4 pb-10 md:px-6">
-          <div className="container-x text-sm text-muted">
-            Updated {data.updated ?? data.date}
-          </div>
-        </section>
+        <CaseStudyHero h1={data.h1} oneLineResult={data.oneLineResult} heroImage={data.heroImage} heroStyle={data.heroStyle} />
 
         {Array.isArray(data.stats) && data.stats.length > 0 && (
-          <section className="px-4 py-6 md:px-6">
-            <div className="container-x grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {data.stats.map((s: { label: string; value: string }) => (
-                <div key={s.label} className="rounded-card border border-line bg-white/60 p-5 shadow-soft">
-                  <p className="text-xl font-medium text-ink">{s.value}</p>
-                  <p className="mt-1 text-sm text-ink-soft">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <CaseStudyStats intro={data.summary} stats={data.stats} />
         )}
+
+        {Array.isArray(data.channels) && data.channels.length > 0 && <CaseStudyChannels channels={data.channels} />}
+
+        <section className="px-4 py-6 md:px-6">
+          <div className="container-x text-sm text-muted">Updated {data.updated ?? data.date}</div>
+        </section>
 
         <section className="px-4 py-6 md:px-6">
           <div className="container-x prose-gtr max-w-3xl" dangerouslySetInnerHTML={{ __html: html }} />

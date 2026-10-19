@@ -4,6 +4,7 @@ h1: "21 meetings in 16 weeks: AI-driven outbound for a clinical research platfor
 slug: healthtech-ai-saas-outbound
 client: Manifold
 clientLogo: /logos/manifold-logo-ink.svg
+cardLogo: /logos/manifold-logo-white.svg
 industry: Healthtech
 date: 2025-01-01
 updated: 2026-10-14
