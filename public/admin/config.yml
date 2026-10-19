@@ -4,7 +4,7 @@ backend:
   name: github
   repo: jrdesvernay-gtr/get-to-rev-site
   branch: main
-  base_url: https://REPLACE-WITH-OAUTH-PROXY.workers.dev # TODO
+  base_url: https://gtr-decap-oauth.jrdesvernay.workers.dev
   auth_endpoint: auth
 
 # Uncomment to edit locally without a GitHub login: run `npx decap-server` next to `npm run dev`
