@@ -42,7 +42,10 @@ export function CaseStudyCard({ cs }: { cs: CaseStudyCardData }) {
         {cs.channels && cs.channels.length > 0 && (
           <div className="absolute inset-x-0 bottom-0 flex flex-wrap gap-1.5 bg-gradient-to-t from-black/60 to-transparent p-3 pt-8">
             {cs.channels.slice(0, 6).map((c) => (
-              <span key={c} className="rounded-full bg-black/60 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+              <span
+                key={c}
+                className="rounded-full bg-black/60 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-red"
+              >
                 {c}
               </span>
             ))}
