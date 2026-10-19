@@ -51,8 +51,7 @@ Staging and production are two sites on the same Hostinger plan, built from the 
 
 ## Open items
 - Real photo of JR: a 259x260 circular profile crop is saved at `public/images/jr-headshot.png` (placeholder until a larger, square, uncropped photo; use it in `components/sections/Operator.tsx` and the About page). Logo SVGs saved at `public/logos/gtr-logo.svg` (cropped) and `gtr-logo-padded.svg`, auto-traced from the PNG (swap in a designer's vector if one exists).
-- GTM container (`lib/site.ts`; Calendly set to calendly.com/get-to-rev/introduction); audit the old container GTM-WDS7RSN first.
-- Blog post bodies: the 5 posts in `content/blog` are drafts with TODO bodies. Import from the old site, then set `draft: false`.
-- Privacy policy text (`app/privacy/page.tsx`).
-- Scribeberry wordmark (text placeholder in `components/sections/LogoStrip.tsx`); client permission for each logo.
+- GTM container GTM-WDS7RSN audited 2026-10-19 (GA4, Meta Pixel, LinkedIn Insight, Microsoft/Bing UET, Hotjar; see `app/privacy/page.tsx` for the full disclosure). Decision: install it on production only, never on staging — already gated in `components/Analytics.tsx` via `NEXT_PUBLIC_STAGING`.
+- Privacy policy text is drafted in `app/privacy/page.tsx`, names the real vendors above plus PostHog; still needs a legal review before launch (see the TODO comment in that file).
+- Client logos: Manifold, Relay, TribLIVE and Scribeberry are all confirmed cleared to show (2026-10-19). Scribeberry's logo (mascot art, resized to `public/logos/scribeberry-logo.png`) is in the homepage logo strip.
 - CRM for form leads is not chosen; Calendly handles booking for now.

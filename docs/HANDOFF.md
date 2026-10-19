@@ -28,10 +28,16 @@ The first hand-built layouts were removed to start clean from Relume. Kept: this
 4. Launch checklist in `README.md`.
 
 ## Open items (need JR)
-- JR headshot, Get-To-Rev logo as SVG, Scribeberry wordmark; permission for each client logo.
-- Calendly event URL and GTM container (`lib/site.ts`; audit the old GTM-WDS7RSN first).
-- Five blog posts: bodies are TODO drafts in `content/blog`. Import from the old site (WordPress export or paste), set `draft: false`. Refresh plan for 3 of them is in `docs/copy-deck.md` (Blog migration).
-- Privacy policy text, the Decap OAuth proxy (Cloudflare Worker), the CRM for form leads.
+- JR headshot (interim crop in place, needs a larger uncropped photo), Get-To-Rev logo as SVG (auto-traced interim version in place).
+- CRM for form leads is not chosen; Calendly handles booking for now.
+
+## Resolved since 2026-10-15
+- Staging live on get-to-revenue.com; Decap OAuth proxy deployed and working at `/admin/`.
+- Speed fixes shipped: GTM deferred until idle and skipped on staging, logo images sized and lazy-loaded.
+- GTM-WDS7RSN audited (GA4, Meta Pixel, LinkedIn Insight, Bing UET, Hotjar). Decision: production only, never staging.
+- All 5 blog posts published (`draft: false`), 3 refreshed per the plan in `docs/copy-deck.md`; FAQ schema wired into the blog template.
+- Privacy policy drafted with the real vendor names above plus PostHog (still needs legal review).
+- All 4 client logos (Manifold, Relay, TribLIVE, Scribeberry) confirmed cleared to show; Scribeberry's logo added to the strip.
 
 ## Reference docs
 - `docs/copy-deck.md`: the full Sitemap & Copy Deck (page copy, redirect map, schema table, llms.txt, build plan). The code already carries Home, Services, Case studies, About, How we work, Pricing and Book a call.
