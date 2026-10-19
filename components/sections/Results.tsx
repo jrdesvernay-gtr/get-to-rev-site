@@ -14,6 +14,7 @@ const LOGOS = [
   { name: "Manifold", src: "/logos/manifold-logo-ink.svg", w: 104, h: 24 },
   { name: "Relay", src: "/logos/relay-logo.svg", w: 63, h: 24 },
   { name: "TribLIVE", src: "/logos/triblive-logo.png", w: 103, h: 24 },
+  { name: "Scribeberry", src: "/logos/scribeberry-logo.png", w: 24, h: 24 },
 ];
 
 export function Results() {
