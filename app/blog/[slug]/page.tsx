@@ -3,8 +3,9 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Cta } from "@/components/sections/Cta";
+import { Faq } from "@/components/sections/Faq";
 import { getEntries, getEntry } from "@/lib/content";
-import { meta, breadcrumbs } from "@/lib/seo";
+import { meta, breadcrumbs, faqSchema } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -26,6 +27,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const entry = getEntry("blog", slug);
   if (!entry) return notFound();
   const { data, html } = entry;
+  const faqItems: { q: string; a: string }[] = Array.isArray(data.faq) ? data.faq : [];
 
   const postSchema = {
     "@context": "https://schema.org",
@@ -46,6 +48,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(postSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }} />
+      {faqItems.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems)) }} />
+      )}
       <Nav />
       <main>
         <PageHeader eyebrow={data.category} h1={data.title} />
@@ -58,6 +63,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <section className="px-4 py-6 md:px-6">
           <div className="container-x prose-gtr max-w-3xl" dangerouslySetInnerHTML={{ __html: html }} />
         </section>
+        {faqItems.length > 0 && <Faq heading="FAQ" items={faqItems} />}
         <Cta heading="Want this built for your pipeline?" />
       </main>
       <Footer />
